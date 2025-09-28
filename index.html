@@ -1,37 +1,705 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Coming Soon</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRK Zenith Vision - Digital Marketing Excellence</title>
+    <meta name="description" content="Transform your business with SRK Zenith Vision's cutting-edge digital marketing solutions. SEO, Social Media, PPC, Web Design & More.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="ascets/lion.png">
+    <link rel="shortcut icon" type="image/png" href="ascets/lion.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
   <style>
-    /* Floating animation */
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* Custom animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
     @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-15px); }
-    }
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.6); }
+        }
+        
+        .animate-fadeInUp {
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
     .animate-float {
-      animation: float 3s ease-in-out infinite;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .animate-pulse-glow {
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+        
+        /* Gradient backgrounds */
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e40af 0%, #3730a3 100%);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #1e40af 0%, #3730a3 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, #1e40af 0%, #3730a3 100%);
+            border-radius: 4px;
+        }
+        
+        /* Hover effects */
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+        
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Glass morphism effect */
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
     }
   </style>
 </head>
-<body class="bg-black min-h-screen flex flex-col items-center justify-center text-white text-center">
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-gray-900/95 backdrop-blur-md shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 relative">
+                <!-- Mobile menu button - positioned absolutely on the left -->
+                <div class="md:hidden absolute left-0">
+                    <button id="mobile-menu-button" class="text-white hover:text-blue-400">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+                
+                <!-- Logo - centered on mobile, left on desktop -->
+                <div class="flex items-center md:ml-0 mx-auto md:mx-0">
+                    <img src="ascets/nav and footer logo.png" alt="SRK Zenith Vision Logo" class="h-10 w-auto">
+                </div>
+                
+                <!-- Desktop navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="text-white hover:text-blue-400 px-3 py-2 text-sm font-medium transition">Home</a>
+                        <a href="#services" class="text-white hover:text-blue-400 px-3 py-2 text-sm font-medium transition">Services</a>
+                        <a href="#about" class="text-white hover:text-blue-400 px-3 py-2 text-sm font-medium transition">About</a>
+                        <a href="#portfolio" class="text-white hover:text-blue-400 px-3 py-2 text-sm font-medium transition">Portfolio</a>
+                        <a href="#contact" class="text-white hover:text-blue-400 px-3 py-2 text-sm font-medium transition">Contact</a>
+                    </div>
+                </div>
+                
+                <!-- Spacer for mobile to balance the layout -->
+                <div class="md:hidden w-6"></div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-gray-900 shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="text-white hover:text-blue-400 block px-3 py-2 text-base font-medium">Home</a>
+                <a href="#services" class="text-white hover:text-blue-400 block px-3 py-2 text-base font-medium">Services</a>
+                <a href="#about" class="text-white hover:text-blue-400 block px-3 py-2 text-base font-medium">About</a>
+                <a href="#portfolio" class="text-white hover:text-blue-400 block px-3 py-2 text-base font-medium">Portfolio</a>
+                <a href="#contact" class="text-white hover:text-blue-400 block px-3 py-2 text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
 
-  <!-- Logo with floating animation -->
-  <img src="your-logo.png" alt="Logo" class="w-40 h-40 animate-float mb-8 rounded-full shadow-lg" />
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20" style="background: url('https://static.vecteezy.com/system/resources/thumbnails/011/545/792/small/abstract-luxury-glowing-lines-curved-overlapping-on-dark-blue-background-free-vector.jpg') center/cover no-repeat;">
+        <div class="absolute inset-0 bg-black opacity-20"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="animate-fadeInUp">
+                <img src="ascets/lion.png" alt="Lion" class="h-40 md:h-48 lg:h-56 w-auto mx-auto mb-8">
+                <h1 class="text-5xl md:text-7xl font-bold text-white mb-6">
+                    Elevate Your Brand with
+                    <span class="block text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400">
+                        Digital Excellence
+                    </span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto">
+                    A new evolving company driving digital success through innovative marketing strategies.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#contact" class="bg-white text-blue-600 font-semibold px-8 py-4 rounded-full hover:bg-gray-100 transition transform hover:scale-105 shadow-lg">
+                        Get Started Today
+                    </a>
+                    <a href="#services" class="border-2 border-white text-white font-semibold px-8 py-4 rounded-full hover:bg-white hover:text-blue-600 transition transform hover:scale-105">
+                        Our Services
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Coming soon text -->
-  <h1 class="text-4xl md:text-6xl font-bold mb-4">Coming Soon</h1>
-  <p class="text-lg md:text-xl max-w-xl text-gray-400">
-    We’re working hard to launch our new website. Stay tuned!
-  </p>
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Our Digital Marketing
+                    <span class="gradient-text">Services</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Comprehensive digital solutions designed to boost your online presence and drive measurable results.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover-scale border border-gray-100">
+                    <div class="w-16 h-16 bg-gradient-to-r from-blue-600 to-indigo-700 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-search text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">SEO Optimization</h3>
+                    <p class="text-gray-600 mb-6">Boost your search rankings with our proven SEO strategies that increase organic traffic and visibility.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Keyword Research</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>On-Page Optimization</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Link Building</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover-scale border border-gray-100">
+                    <div class="w-16 h-16 bg-gradient-to-r from-blue-700 to-blue-800 rounded-full flex items-center justify-center mb-6">
+                        <i class="fab fa-facebook-f text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Social Media Marketing</h3>
+                    <p class="text-gray-600 mb-6">Engage your audience across all social platforms with compelling content and strategic campaigns.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Content Strategy</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Community Management</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Influencer Partnerships</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover-scale border border-gray-100">
+                    <div class="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-600 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-mouse-pointer text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">PPC Advertising</h3>
+                    <p class="text-gray-600 mb-6">Maximize ROI with targeted pay-per-click campaigns that drive qualified leads and conversions.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Google Ads</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Facebook Ads</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Campaign Optimization</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover-scale border border-gray-100">
+                    <div class="w-16 h-16 bg-gradient-to-r from-blue-800 to-indigo-900 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-laptop-code text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Web Design & Development</h3>
+                    <p class="text-gray-600 mb-6">Create stunning, responsive websites that convert visitors into customers with modern design.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Responsive Design</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>E-commerce Solutions</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Performance Optimization</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover-scale border border-gray-100">
+                    <div class="w-16 h-16 bg-gradient-to-r from-teal-500 to-cyan-600 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-envelope text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Email Marketing</h3>
+                    <p class="text-gray-600 mb-6">Nurture leads and retain customers with personalized email campaigns that drive engagement.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Automation Workflows</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>A/B Testing</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Analytics & Reporting</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover-scale border border-gray-100">
+                    <div class="w-16 h-16 bg-gradient-to-r from-blue-600 to-blue-700 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-bar text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Analytics & Reporting</h3>
+                    <p class="text-gray-600 mb-6">Track performance and optimize campaigns with detailed analytics and actionable insights.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Custom Dashboards</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>ROI Tracking</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Performance Reports</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Optional email signup -->
-  <div class="mt-6 flex flex-col sm:flex-row gap-3">
-    <input type="email" placeholder="Enter your email" class="px-4 py-2 rounded-lg text-black focus:outline-none" />
-    <button class="bg-white text-black font-semibold px-5 py-2 rounded-lg hover:bg-gray-300 transition">Notify Me</button>
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                        About
+                        <span class="gradient-text">SRK Zenith Vision</span>
+                    </h2>
+                    <p class="text-xl text-gray-600 mb-6">
+                        We are a new and evolving digital marketing company dedicated to helping businesses reach their zenith through innovative digital strategies and cutting-edge technology.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-8">
+                        As a growing company, we combine fresh perspectives with proven expertise to deliver exceptional results that drive growth, increase brand awareness, and maximize ROI for our clients.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-6 mb-8">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-blue-600 mb-2">30+</div>
+                            <div class="text-gray-600">Projects Completed</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-blue-600 mb-2">95%</div>
+                            <div class="text-gray-600">Client Satisfaction</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-blue-600 mb-2">New</div>
+                            <div class="text-gray-600">Evolving Company</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-blue-600 mb-2">24/7</div>
+                            <div class="text-gray-600">Support Available</div>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white font-semibold px-8 py-4 rounded-full hover:shadow-lg transition transform hover:scale-105">
+                        Work With Us
+                    </a>
+                </div>
+                
+                <div class="relative">
+                    <div class="bg-white p-8 rounded-2xl shadow-xl">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-6">Why Choose Us?</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-check text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 mb-1">Growing Track Record</h4>
+                                    <p class="text-gray-600">Already delivering measurable results across 30+ successful projects for businesses of all sizes.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-check text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 mb-1">Fresh & Expert Team</h4>
+                                    <p class="text-gray-600">Certified professionals with fresh perspectives and proven expertise in digital marketing.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-check text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 mb-1">Custom Strategies</h4>
+                                    <p class="text-gray-600">Tailored approaches designed specifically for your business goals.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center mr-4 mt-1">
+                                    <i class="fas fa-check text-blue-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900 mb-1">Transparent Communication</h4>
+                                    <p class="text-gray-600">Regular updates and clear reporting on campaign performance.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Our
+                    <span class="gradient-text">Success Stories</span>
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Discover how we've helped businesses achieve their digital marketing goals and drive exceptional growth.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Portfolio Item 1 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover-scale">
+                    <div class="h-48 bg-gradient-to-r from-blue-500 to-purple-600 flex items-center justify-center">
+                        <i class="fas fa-shopping-cart text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">E-commerce Boost</h3>
+                        <p class="text-gray-600 mb-4">Increased online sales by 250% for a retail client through comprehensive SEO and PPC strategies.</p>
+                        <div class="flex items-center text-blue-600">
+                            <span class="font-semibold">+250% Sales Increase</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 2 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover-scale">
+                    <div class="h-48 bg-gradient-to-r from-green-500 to-teal-600 flex items-center justify-center">
+                        <i class="fas fa-users text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Social Media Growth</h3>
+                        <p class="text-gray-600 mb-4">Grew a tech startup's social media following by 400% and engagement by 300% in 6 months.</p>
+                        <div class="flex items-center text-green-600">
+                            <span class="font-semibold">+400% Followers</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 3 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 hover-scale">
+                    <div class="h-48 bg-gradient-to-r from-orange-500 to-red-600 flex items-center justify-center">
+                        <i class="fas fa-chart-line text-white text-6xl"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Lead Generation</h3>
+                        <p class="text-gray-600 mb-4">Generated 500+ qualified leads monthly for a B2B service company through targeted campaigns.</p>
+                        <div class="flex items-center text-orange-600">
+                            <span class="font-semibold">500+ Leads/Month</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 gradient-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+                    Ready to Transform Your
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-blue-400">
+                        Digital Presence?
+                    </span>
+                </h2>
+                <p class="text-xl text-gray-200 max-w-3xl mx-auto">
+                    Let's discuss how we can help your business reach new heights with our digital marketing expertise.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="bg-white/10 backdrop-blur-md rounded-2xl p-8 glass">
+                    <h3 class="text-2xl font-bold text-white mb-6">Get In Touch</h3>
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-white font-medium mb-2">First Name</label>
+                                <input type="text" class="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Your first name">
+                            </div>
+                            <div>
+                                <label class="block text-white font-medium mb-2">Last Name</label>
+                                <input type="text" class="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Your last name">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-white font-medium mb-2">Email</label>
+                            <input type="email" class="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="your@email.com">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-white font-medium mb-2">Phone</label>
+                            <input type="tel" class="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="+1 (555) 123-4567">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-white font-medium mb-2">Service Interest</label>
+                            <select class="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option value="" class="text-gray-900">Select a service</option>
+                                <option value="seo" class="text-gray-900">SEO Optimization</option>
+                                <option value="social" class="text-gray-900">Social Media Marketing</option>
+                                <option value="ppc" class="text-gray-900">PPC Advertising</option>
+                                <option value="web" class="text-gray-900">Web Design & Development</option>
+                                <option value="email" class="text-gray-900">Email Marketing</option>
+                                <option value="analytics" class="text-gray-900">Analytics & Reporting</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-white font-medium mb-2">Message</label>
+                            <textarea rows="4" class="w-full px-4 py-3 rounded-lg bg-white/20 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Tell us about your project..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-white text-blue-600 font-semibold px-8 py-4 rounded-lg hover:bg-gray-100 transition transform hover:scale-105 animate-pulse-glow">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="space-y-8">
+                    <div class="bg-white/10 backdrop-blur-md rounded-2xl p-8 glass">
+                        <h3 class="text-2xl font-bold text-white mb-6">Contact Information</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-map-marker-alt text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-semibold mb-1">Address</h4>
+                                    <p class="text-gray-200">Bangalore<br>Karnataka, India</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-phone text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-semibold mb-1">Phone</h4>
+                                    <p class="text-gray-200">+91 73378 01771</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-envelope text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-semibold mb-1">Email</h4>
+                                    <p class="text-gray-200">srkzenithvision@gmail.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fas fa-clock text-white"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-semibold mb-1">Business Hours</h4>
+                                    <p class="text-gray-200">Mon - Fri: 9:00 AM - 6:00 PM<br>Sat: 10:00 AM - 4:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Social Media -->
+                    <div class="bg-white/10 backdrop-blur-md rounded-2xl p-8 glass">
+                        <h3 class="text-2xl font-bold text-white mb-6">Follow Us</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition">
+                                <i class="fab fa-facebook-f text-white"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition">
+                                <i class="fab fa-twitter text-white"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition">
+                                <i class="fab fa-linkedin-in text-white"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center hover:bg-white/30 transition">
+                                <i class="fab fa-instagram text-white"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <img src="ascets/nav and footer logo.png" alt="SRK Zenith Vision Logo" class="h-12 w-auto">
+                    </div>
+                    <p class="text-gray-400 mb-6 max-w-md">
+                        Transforming businesses through innovative digital marketing strategies. Your success is our mission.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-blue-400 rounded-full flex items-center justify-center hover:bg-blue-500 transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-blue-700 rounded-full flex items-center justify-center hover:bg-blue-800 transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-pink-600 rounded-full flex items-center justify-center hover:bg-pink-700 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#services" class="hover:text-white transition">SEO Optimization</a></li>
+                        <li><a href="#services" class="hover:text-white transition">Social Media Marketing</a></li>
+                        <li><a href="#services" class="hover:text-white transition">PPC Advertising</a></li>
+                        <li><a href="#services" class="hover:text-white transition">Web Design</a></li>
+                        <li><a href="#services" class="hover:text-white transition">Email Marketing</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#about" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="#portfolio" class="hover:text-white transition">Portfolio</a></li>
+                        <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
+                        <li><a href="#" class="hover:text-white transition">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition">Terms of Service</a></li>
+                    </ul>
+                </div>
   </div>
 
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 SRK Zenith Vision. All rights reserved. | Digital Marketing Excellence</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu if open
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('bg-gray-900/98');
+            } else {
+                nav.classList.remove('bg-gray-900/98');
+            }
+        });
+
+        // Form submission (basic validation)
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Basic form validation
+            const inputs = this.querySelectorAll('input[required], select[required], textarea[required]');
+            let isValid = true;
+            
+            inputs.forEach(input => {
+                if (!input.value.trim()) {
+                    isValid = false;
+                    input.classList.add('border-red-500');
+                } else {
+                    input.classList.remove('border-red-500');
+                }
+            });
+            
+            if (isValid) {
+                // Here you would typically send the form data to your server
+                alert('Thank you for your message! We\'ll get back to you soon.');
+                this.reset();
+            } else {
+                alert('Please fill in all required fields.');
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fadeInUp');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all sections for animation
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
 </body>
 </html>
